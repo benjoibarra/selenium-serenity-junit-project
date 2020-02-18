@@ -10,10 +10,18 @@ public class SearchResultsPage extends PageObject {
 
     private WebDriver _driver = null;
 
-    @FindBy(linkText = "Selenium - Web Browser Automation")
-    WebElementFacade lnkSelenium;
+    @FindBy(linkText = "About Selenium")
+    WebElementFacade aboutSeleniumLink;
 
-    public void assertSeleniumPresent(){
-        Assert.assertTrue(lnkSelenium.isDisplayed());
+    @FindBy(css = "#rso > div:nth-child(2) > div > div.kp-blk.cUnQKe.Wnoohf.OJXvsb > div > div.ifM9O > h2")
+    WebElementFacade peopleAlsoAskLabel;
+
+    public void assertAboutSeleniumLinkIsPresent(){
+        Assert.assertTrue(aboutSeleniumLink.isDisplayed());
     }
+
+    public void assertPeopleAlsoAskIsPresent(){
+        Assert.assertTrue(peopleAlsoAskLabel.isDisplayed());
+    }
+
 }
